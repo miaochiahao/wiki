@@ -21,3 +21,14 @@ chattr +i /etc/profile
 chattr -i /etc/profile
 ```
 
+
+
+## 主机扫描
+
+```bash
+sudo nmap -sP -PI -PT 192.168.1.0/24 # 扫描该网段内所有IP
+nmap -sS -sU -T4 -A -v # 探测开放端口，服务版本
+massscan -p 22,80,445 192.168.1.0/24 # 快速扫描网段
+fping -a -q -g 192.168.92.0/24 # 存活主机
+```
+

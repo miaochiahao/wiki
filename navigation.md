@@ -6,6 +6,7 @@
 [CTF-AWD](pages/ctf-awd.md)
 [代码注入](pages/code-injection.md)
 [命令注入](pages/cmd-injection.md)
+[调试指令](pages/debug.md)
 
 [Menu Item 1]()
 
