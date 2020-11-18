@@ -7,6 +7,6 @@
 | Tomcat 源代码调试 - 看不见的 Shell 第二式之隐藏任意 Jsp 文件 | https://mp.weixin.qq.com/s/1ZiLD396088TxiW_dUOFsQ            |
 | How Do I shot Web-.pdf                                       | https://github.com/jhaddix/tbhm/blob/master/How%20Do%20I%20shot%20Web-.pdf |
 | OpenRasp                                                     | https://rasp.baidu.com/                                      |
-|                                                              |                                                              |
+| 奇淫技巧之突破Runtime.exec限制获取shell 命令执行环境         | https://www.anquanke.com/post/id/159554                      |
 |                                                              |                                                              |
 
