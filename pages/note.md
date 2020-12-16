@@ -10,3 +10,5 @@
 | 奇淫技巧之突破Runtime.exec限制获取shell 命令执行环境         | https://www.anquanke.com/post/id/159554                      |
 |                                                              |                                                              |
 
+https://mholt.github.io/json-to-go/
+https://www.onlinetool.io/xmltogo/
